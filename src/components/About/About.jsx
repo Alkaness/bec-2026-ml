@@ -16,7 +16,7 @@ export function About() {
           <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4" style={{ borderColor: 'var(--color-orange-light)' }} />
 
           <h2
-            className="font-heading text-2xl md:text-3xl mb-8 uppercase tracking-wide cyber-glitch-text text-center md:text-left"
+            className="font-heading text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 uppercase tracking-wide cyber-glitch-text text-center md:text-left"
             style={{ color: 'var(--color-text)' }}
           >
             ТРІШКИ ПРО СЕБЕ ТА МОЮ МОТИВАЦІЮ
@@ -26,7 +26,7 @@ export function About() {
             {/* User Photo */}
             <div className="shrink-0 mx-auto md:mx-0">
               <div
-                className="cyber-photo-container w-64 h-80 md:w-72 md:h-96 shadow-2xl"
+                className="cyber-photo-container w-52 h-64 sm:w-64 sm:h-80 md:w-72 md:h-96 shadow-2xl"
                 style={{ '--bg-img': `url(${eugenPhoto})` }}
               >
                 <img src={eugenPhoto} alt="Євгенія Кицмень" className="cyber-photo" />

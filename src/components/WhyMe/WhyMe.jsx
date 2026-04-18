@@ -9,7 +9,7 @@ export function WhyMe() {
       <AnimatedSection>
         <SectionLabel number={2} label="ЧОМУ Я" />
         <h2
-          className="font-heading text-3xl md:text-5xl tracking-widest mb-12 uppercase cyber-glitch-text"
+          className="font-heading text-2xl sm:text-3xl md:text-5xl tracking-widest mb-8 sm:mb-12 uppercase cyber-glitch-text"
           style={{ color: 'var(--color-text)' }}
         >
           ЧОМУ САМЕ Я?

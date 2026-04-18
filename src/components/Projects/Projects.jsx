@@ -24,7 +24,7 @@ export function Projects() {
           {/* Custom arrows */}
           <button
             onClick={() => swiperRef.current?.slidePrev()}
-            className="absolute -left-6 md:-left-14 z-20 w-10 h-10 flex items-center justify-center transition-all duration-200 hover:scale-110"
+            className="absolute hidden sm:flex -left-6 md:-left-14 z-20 w-10 h-10 items-center justify-center transition-all duration-200 hover:scale-110"
             style={{
               top: '160px',
               background: 'var(--color-bg-surface)',
@@ -39,7 +39,7 @@ export function Projects() {
 
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className="absolute -right-6 md:-right-14 z-20 w-10 h-10 flex items-center justify-center transition-all duration-200 hover:scale-110"
+            className="absolute hidden sm:flex -right-6 md:-right-14 z-20 w-10 h-10 items-center justify-center transition-all duration-200 hover:scale-110"
             style={{
               top: '160px',
               background: 'var(--color-bg-surface)',

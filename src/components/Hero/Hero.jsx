@@ -36,7 +36,7 @@ export function Hero() {
         
         {/* Animated heading with Glitch effect */}
         <motion.h1
-          className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-widest mb-6 flex flex-wrap justify-center uppercase cyber-glitch-text"
+          className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-widest mb-6 flex flex-wrap justify-center uppercase cyber-glitch-text"
           variants={container}
           initial="hidden"
           animate="visible"
@@ -47,7 +47,7 @@ export function Hero() {
               <motion.span
                 key={i}
                 variants={letterVariant}
-                className={char === ' ' ? 'w-4 md:w-8' : ''}
+                className={char === ' ' ? 'w-3 sm:w-4 md:w-8' : ''}
                 style={{ 
                   color: isName ? 'var(--color-primary)' : 'var(--color-text)',
                   textShadow: isName ? '0 0 8px var(--color-primary-deep)' : 'none'
@@ -67,13 +67,13 @@ export function Hero() {
            animate={{ opacity: 1, x: 0 }}
            transition={{ delay: 1.0, duration: 0.5 }}
         >
-          <p className="font-mono text-sm md:text-base tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="font-mono text-xs sm:text-sm md:text-base tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
             $ system.role = "IT Responsible"
           </p>
-          <p className="font-mono text-sm md:text-base tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="font-mono text-xs sm:text-sm md:text-base tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
             $ system.event = "BEC 2026"
           </p>
-          <p className="text-lg md:text-xl font-medium mt-3 typing-cursor" style={{ color: 'var(--color-text)' }}>
+          <p className="text-base sm:text-lg md:text-xl font-medium mt-3 typing-cursor" style={{ color: 'var(--color-text)' }}>
             І ЦЕ Є МОЯ МОТИВАШКА НА <span style={{ color: 'var(--color-primary)' }} className="font-heading uppercase tracking-wider">IT RESP'A</span>
           </p>
         </motion.div>
