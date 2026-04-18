@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* BEC Visual Identity: EXTRA (Dark backgrounds) */
+  --color-bg: #0B0B0D;
+  --color-bg-surface: #181619;
+  --color-bg-elevated: #181B22;
+  --color-bg-card: #272A31;
+
+  /* BEC Visual Identity (Primary) */
+  --color-primary-light: #F2B654;
+  --color-primary: #EEA225;
+  --color-primary-dark: #E49311;
+  --color-primary-deep: #666666;
+
+  /* Orange Color Scheme */
+  --color-orange: #FF5F2E;
+  --color-orange-light: #FF7600;
+  --color-orange-dark: #FF842C;
+  --color-orange-muted: #FF6701;
+  /* Text Colors */
+  --color-text: #FFFFFF;
+  --color-text-muted: #D1D5DB;
+  /* Tailwind gray-300 */
+  --color-text-faint: #9CA3AF;
+  /* Tailwind gray-400 */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+}
+
+* {
+  cursor: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cyberpunk Selection */
+::selection {
+  background: var(--color-orange);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--color-orange);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 0px;
+  /* Sharp corners for cyberpunk */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-cyan);
+}
+
+/* Cyberpunk Utility Classes */
+.cyber-glitch-text {
+  position: relative;
+  text-shadow: 2px 2px 0px var(--color-primary-dark), -2px -2px 0px var(--color-orange);
+}
+
+.cyber-glitch-text:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.cyber-panel {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-orange-muted);
+  box-shadow: 4px 4px 0px var(--color-primary-dark);
+  border-radius: 0px;
+  /* Brutalist/sharp edges */
+  transition: all 0.2s ease-in-out;
+}
+
+.cyber-panel:hover {
+  border-color: var(--color-primary);
+  box-shadow: 6px 6px 0px var(--color-orange-light);
+  transform: translate(-3px, -3px);
+}
+
+.cyber-button {
+  text-transform: uppercase;
+  font-family: 'Russo One', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border-radius: 0;
+  border: 2px solid transparent;
+}
+
+/* Global 3D Cyber Grid Animation */
+.global-grid-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.global-grid {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(var(--color-orange-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-orange-dark) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform-origin: top center;
+  transform: perspective(600px) rotateX(60deg) translateY(0);
+  animation: grid-fly 2s linear infinite;
+  opacity: 0.15;
+}
+
+@keyframes grid-fly {
+  0% {
+    transform: perspective(600px) rotateX(60deg) translateY(0);
+  }
+
+  100% {
+    transform: perspective(600px) rotateX(60deg) translateY(50px);
+  }
+
+  /* Exact size of background-size */
+}
+
+/* Global CRT Overlay (Animated) */
+.global-crt {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+  background-size: 100% 4px, 3px 100%;
+  z-index: 100;
+  opacity: 0.35;
+  animation: crt-flicker 0.15s infinite;
+}
+
+@keyframes crt-flicker {
+  0% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.35;
+  }
+}
+
+/* Focus */
+*:focus-visible {
+  outline: 2px solid var(--color-orange-light);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========= Projects Swiper ========= */
+.projects-swiper {
+  padding: 20px 10px;
+  overflow: visible;
+}
+
+.projects-swiper-slide {
+  width: 500px;
+  max-width: 85vw;
+  height: auto;
+}
+
+
+/* Cyber Photo Glitch */
+.cyber-photo-container {
+  display: inline-block;
+  overflow: hidden;
+  border: 2px solid var(--color-primary-dark);
+  position: relative;
+}
+
+.cyber-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease-in-out;
+  /* Not hovering: aggressive orange/red cyberpunk filter */
+  filter: grayscale(1) sepia(1) hue-rotate(-25deg) saturate(5) contrast(1.4);
+}
+
+.cyber-photo-container:hover .cyber-photo {
+  /* Hovering: somewhat natural but sharp and stark */
+  filter: grayscale(0.2) contrast(1.3) saturate(1.2);
+}
+
+/* Fake glitch layers using pseudo-elements */
+.cyber-photo-container::before,
+.cyber-photo-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.cyber-photo-container::before {
+  mix-blend-mode: color-dodge;
+  filter: sepia(1) hue-rotate(-50deg) saturate(3);
+  transform: translateX(-3px);
+  animation: photo-glitch-1 3s infinite linear alternate-reverse;
+}
+
+.cyber-photo-container::after {
+  mix-blend-mode: exclusion;
+  filter: sepia(1) hue-rotate(150deg) saturate(3);
+  transform: translateX(3px);
+  animation: photo-glitch-2 2s infinite linear alternate-reverse;
+}
+
+/* Increase glitch intensity on hover, but keep speed same */
+.cyber-photo-container:hover::before {
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  animation: photo-glitch-1 3s infinite linear alternate-reverse;
+}
+
+.cyber-photo-container:hover::after {
+  opacity: 0.4;
+  mix-blend-mode: difference;
+  animation: photo-glitch-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes photo-glitch-1 {
+  0% {
+    clip-path: inset(20% 0 80% 0);
+    transform: translate(-2px, 1px);
+  }
+
+  20% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(2px, -1px);
+  }
+
+  40% {
+    clip-path: inset(40% 0 50% 0);
+    transform: translate(-2px, 2px);
+  }
+
+  60% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(2px, -2px);
+  }
+
+  80% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(-1px, 2px);
+  }
+
+  100% {
+    clip-path: inset(30% 0 50% 0);
+    transform: translate(1px, -1px);
+  }
+}
+
+@keyframes photo-glitch-2 {
+  0% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(2px, -1px);
+  }
+
+  20% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, 1px);
+  }
+
+  40% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+
+  60% {
+    clip-path: inset(70% 0 15% 0);
+    transform: translate(-2px, -2px);
+  }
+
+  80% {
+    clip-path: inset(5% 0 80% 0);
+    transform: translate(1px, 2px);
+  }
+
+  100% {
+    clip-path: inset(50% 0 30% 0);
+    transform: translate(-1px, -1px);
+  }
+}
