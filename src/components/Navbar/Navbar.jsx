@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'GitHub', href: 'https://github.com/Alkaness', external: true },
 ];
 
-export function Navbar() {
+export function Navbar({ onLogoClick }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-3 group">
+        <a href="#hero" className="flex items-center gap-3 group" onClick={onLogoClick}>
           <img
             src={becLogo}
             alt="BEC Logo"

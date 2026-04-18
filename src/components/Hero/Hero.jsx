@@ -73,7 +73,7 @@ export function Hero() {
           <p className="font-mono text-sm md:text-base tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
             $ system.event = "BEC 2026"
           </p>
-          <p className="text-lg md:text-xl font-medium mt-3" style={{ color: 'var(--color-text)' }}>
+          <p className="text-lg md:text-xl font-medium mt-3 typing-cursor" style={{ color: 'var(--color-text)' }}>
             І ЦЕ Є МОЯ МОТИВАШКА НА <span style={{ color: 'var(--color-primary)' }} className="font-heading uppercase tracking-wider">IT RESP'A</span>
           </p>
         </motion.div>
@@ -118,11 +118,10 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
       >
-        <a href="#about" aria-label="Прокрутити вниз">
+        <a href="#about" aria-label="Прокрутити вниз" className="float-animation block">
           <ChevronDown
-            className="animate-pulse"
             size={36}
-            style={{ color: 'var(--color-primary)' }}
+            style={{ color: 'var(--color-primary)', filter: 'drop-shadow(0 0 6px var(--color-primary))' }}
           />
         </a>
       </motion.div>
