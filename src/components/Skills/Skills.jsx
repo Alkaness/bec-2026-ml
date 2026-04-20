@@ -6,7 +6,7 @@ import { Users, Target, Clock } from 'lucide-react';
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 max-w-5xl mx-auto">
+    <section id="skills" className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto">
       <AnimatedSection>
         <SectionLabel number={3} label="НАВИЧКИ" />
       </AnimatedSection>
@@ -14,19 +14,19 @@ export function Skills() {
       {/* Hard Skills */}
       <AnimatedSection delay={0.1}>
         <h2
-          className="font-heading text-2xl md:text-3xl mb-6 uppercase tracking-wide cyber-glitch-text"
+          className="font-heading text-2xl md:text-3xl mb-6 uppercase tracking-wide cyber-glitch-text break-words"
           style={{ color: 'var(--color-text)' }}
         >
           HARD SKILLS
         </h2>
       </AnimatedSection>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-8">
         {/* Left column — Languages & Runtimes */}
         <AnimatedSection delay={0.15}>
-          <div className="cyber-panel p-6">
+          <div className="cyber-panel p-4 md:p-6">
             <h3
-              className="font-mono text-sm font-bold mb-6 pb-3 border-b-2 tracking-widest uppercase"
+              className="font-mono text-xs sm:text-sm font-bold mb-4 md:mb-6 pb-3 border-b-2 tracking-wider sm:tracking-widest uppercase break-words"
               style={{
                 color: 'var(--color-primary)',
                 borderColor: 'var(--color-primary-dark)',
@@ -34,7 +34,7 @@ export function Skills() {
             >
               &gt; МОВИ & РАНТАЙМИ
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {skills.languages.map((skill) => (
                 <SkillBadge key={skill.name} {...skill} />
               ))}
@@ -44,9 +44,9 @@ export function Skills() {
 
         {/* Right column — Tools & Infrastructure */}
         <AnimatedSection delay={0.2}>
-          <div className="cyber-panel p-6">
+          <div className="cyber-panel p-4 md:p-6">
             <h3
-              className="font-mono text-sm font-bold mb-6 pb-3 border-b-2 tracking-widest uppercase"
+              className="font-mono text-xs sm:text-sm font-bold mb-4 md:mb-6 pb-3 border-b-2 tracking-wider sm:tracking-widest uppercase break-words"
               style={{
                 color: 'var(--color-primary)',
                 borderColor: 'var(--color-primary-dark)',
@@ -54,7 +54,7 @@ export function Skills() {
             >
               &gt; ТУЛЗИ & ІНФРАСТРУКТУРА
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {skills.tools.map((skill) => (
                 <SkillBadge key={skill.name} {...skill} />
               ))}
