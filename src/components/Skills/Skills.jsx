@@ -92,7 +92,7 @@ export function Skills() {
             <Clock size={28} style={{ color: 'var(--color-primary)' }} className="mb-4" />
             <h4 className="font-heading tracking-widest text-lg mb-2 uppercase" style={{ color: 'var(--color-text)' }}>Стресостійкість + Тайм-менеджмент</h4>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
-              Чудово менеджерую свій час. В 11 класі успішно поєднував інтенсивне навчання, репетиторство та заняття музикою без вигорання.
+              Чудово менеджу свій час. В 11 класі успішно поєднував інтенсивне навчання, репетиторство та заняття музикою без вигорання.
             </p>
           </div>
         </div>
