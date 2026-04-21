@@ -103,6 +103,20 @@ body {
   transform: translate(-3px, -3px);
 }
 
+/* Mobile: remove external box-shadow to prevent right-side overflow */
+@media (max-width: 767px) {
+  .cyber-panel {
+    box-shadow: none;
+    border-bottom: 3px solid var(--color-primary-dark);
+    border-right: 3px solid var(--color-primary-dark);
+  }
+  .cyber-panel:hover {
+    box-shadow: none;
+    border-color: var(--color-orange-light);
+    transform: none;
+  }
+}
+
 .cyber-button {
   text-transform: uppercase;
   font-family: 'Russo One', sans-serif;

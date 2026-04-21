@@ -1,11 +1,25 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+function useIsTouchDevice() {
+  const [isTouch, setIsTouch] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: none) or (pointer: coarse)');
+    setIsTouch(mq.matches);
+    const handler = (e) => setIsTouch(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isTouch;
+}
+
 export function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const isTouchDevice = useIsTouchDevice();
 
   useEffect(() => {
+    if (isTouchDevice) return;
     // Hide default cursor
     document.body.style.cursor = 'none';
     
@@ -19,9 +33,10 @@ export function CustomCursor() {
       window.removeEventListener('mousemove', updateMousePosition);
       document.body.style.cursor = 'auto';
     };
-  }, []);
+  }, [isTouchDevice]);
 
   useEffect(() => {
+    if (isTouchDevice) return;
     const handleHoverStart = () => setIsHovering(true);
     const handleHoverEnd = () => setIsHovering(false);
 
@@ -41,7 +56,9 @@ export function CustomCursor() {
     attachListeners();
     
     return () => observer.disconnect();
-  }, []);
+  }, [isTouchDevice]);
+
+  if (isTouchDevice) return null;
 
   return (
     <>

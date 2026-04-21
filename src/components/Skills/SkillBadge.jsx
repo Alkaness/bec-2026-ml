@@ -5,7 +5,7 @@ export function SkillBadge({ name, detail, color }) {
 
   return (
     <div
-      className="flex items-center gap-3 px-4 py-3 transition-all duration-200 cursor-default group relative overflow-hidden"
+      className="flex items-center gap-3 px-4 py-3 transition-all duration-200 cursor-default group relative"
       style={{
         backgroundColor: hovered ? `${color}15` : 'var(--color-bg-surface)',
         borderLeft: `4px solid ${color}`,
@@ -20,14 +20,14 @@ export function SkillBadge({ name, detail, color }) {
     >
       <div className="flex-1 min-w-0">
         <p
-          className="font-mono text-sm font-bold truncate uppercase"
+          className="font-mono text-sm font-bold uppercase break-words"
           style={{ color: hovered ? '#fff' : color }}
         >
           {name}
         </p>
         {detail && (
           <p
-            className="text-xs mt-1 truncate font-sans"
+            className="text-xs mt-1 font-sans leading-relaxed"
             style={{ color: 'var(--color-text-muted)' }}
           >
             {detail}

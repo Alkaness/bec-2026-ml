@@ -6,7 +6,7 @@ import { Users, Target, Clock } from 'lucide-react';
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto">
+    <section id="skills" className="py-16 md:py-20 px-6 max-w-5xl mx-auto">
       <AnimatedSection>
         <SectionLabel number={3} label="НАВИЧКИ" />
       </AnimatedSection>
